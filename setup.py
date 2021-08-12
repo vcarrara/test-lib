@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as stream:
     long_description = stream.read()
 
 setuptools.setup(
-    name="test-lib",
+    name="olympuslib",
     version="0.0.1",
     author="Namkin",
     description="Data utils library",
