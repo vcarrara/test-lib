@@ -11,10 +11,11 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/vcarrara/test-lib",
-    packages=setuptools.find_packages("olympuslib"),
+    packages=setuptools.find_packages(where="olympuslib"),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[]
 )
