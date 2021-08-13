@@ -20,3 +20,11 @@ The repository contains tests that are not packaged to the final library. To exe
 pip install pytest
 pytest
 ```
+
+## Usage
+
+Import the library as a standard Python lib:
+
+```python
+import olympuslib
+```
