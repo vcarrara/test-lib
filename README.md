@@ -28,3 +28,12 @@ Import the library as a standard Python lib:
 ```python
 import olympuslib
 ```
+
+Use the custom logger for monitoring:
+
+```python
+from olympuslib.logging.logger import OlympusLogger
+
+logger = OlympusLogger(log_to_file=True, file_path="./logs")
+logger.critical('Something went wrong')
+```
