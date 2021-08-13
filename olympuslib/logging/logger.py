@@ -19,12 +19,14 @@ class OlympusLogger(logging.Logger):
 
         if log_to_stdout:
             stream_handler = logging.StreamHandler()
+            stream_handler.setLevel(level)
             formatter = logging.Formatter(format)
             stream_handler.setFormatter(formatter)
             self.addHandler(stream_handler)
 
         if log_to_file:
             file_handler = logging.FileHandler(file_path)
+            file_handler.setLevel(level)
             formatter = logging.Formatter(format)
             file_handler.setFormatter(formatter)
             self.addHandler(file_handler)

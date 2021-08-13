@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as stream:
 
 setup(
     name="olympuslib",
-    version="0.0.8",
+    version="0.0.12",
     author="Namkin",
     description="Data utils library",
     long_description=long_description,
