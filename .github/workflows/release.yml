@@ -2,7 +2,7 @@ name: Update version on release
 
 on:
   release:
-    types: [published]
+    types: [created]
     
 jobs:
   update-version:
@@ -15,6 +15,9 @@ jobs:
           find: "version=\"((?:[0-9]|\\.)*)\""
           replace: "version=\"${{ github.event.release.tag_name }}\""
           include: setup.py
+      - name: Print setup.py
+        run: |
+          cat setup.py
       - name: Auto commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
