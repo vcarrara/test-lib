@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Update version
+      - name: Update version in setup.py
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "version=\"((?:[0-9]|\\.)*)\""
           replace: "version=\"${{ github.event.release.tag_name }}\""
           include: setup.py
-      - run: |
-          cat setup.py
+      - name: Auto commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "🤖 bump version to ${{ github.event.release.tag_name }}"
