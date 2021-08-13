@@ -1,0 +1,19 @@
+name: Update version on release
+
+on:
+  release:
+    types: [published]
+    
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Update version
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "version=\"((?:[0-9]|\\.)*)\""
+          replace: "version=\"${{ github.event.release.tag_name }}\""
+          include: setup.py
+      - run: |
+          cat setup.py
